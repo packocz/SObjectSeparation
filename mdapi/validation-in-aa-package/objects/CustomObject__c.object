@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>ValidationRule2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  CONTAINS(Field1__c, &apos;Some specific text&apos;) ,
+			Field2__c)</errorConditionFormula>
+        <errorDisplayField>Field1__c</errorDisplayField>
+        <errorMessage>Cannot have some specific text if Field2 is true</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ValidationRule1</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Field1__c )</errorConditionFormula>
+        <errorDisplayField>Field1__c</errorDisplayField>
+        <errorMessage>Cannot be blank</errorMessage>
+    </validationRules>
+    <fields>
+        <fullName>Field1__c</fullName>
+        <externalId>false</externalId>
+        <label>Field1</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Field2</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>
